@@ -5,7 +5,9 @@ import lombok.NoArgsConstructor;
 import person.special.checklistgo.backend.entities.Checklist;
 import person.special.checklistgo.backend.entities.ListItem;
 
+
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -15,7 +17,7 @@ public class ChecklistResponse {
 
     private Long id;
     private String name;
-    private Set<ListItem> listItems;
+    private Map<Long, ListItem> listItems;
 
     public ChecklistResponse(Checklist checklist) {
         this.id = checklist.getId();

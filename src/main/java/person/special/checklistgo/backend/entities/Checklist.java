@@ -7,9 +7,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import person.special.checklistgo.backend.dto.ChecklistRequest;
 
+
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,7 +26,8 @@ public class Checklist {
 
     @JsonIgnore
     @OneToMany(mappedBy = "checklist", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-    private Set<ListItem> listItems = new HashSet<>();
+    @MapKey(name = "id")
+    private Map<Long, ListItem> listItems = new HashMap<>();
 
     public Checklist(ChecklistRequest body) {
         this.name = body.getName();

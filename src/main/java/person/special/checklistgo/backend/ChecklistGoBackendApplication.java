@@ -1,13 +1,14 @@
 package person.special.checklistgo.backend;
 
+import org.hibernate.annotations.Check;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CheclistGoBackendApplication {
+public class ChecklistGoBackendApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CheclistGoBackendApplication.class, args);
+        SpringApplication.run(ChecklistGoBackendApplication.class, args);
     }
 
 }

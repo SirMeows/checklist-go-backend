@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>person.special</groupId>
-    <artifactId>checlist-go-backend</artifactId>
+    <artifactId>checklist-go-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>checlist-go-backend</name>
-    <description>checlist-go-backend</description>
+    <name>checklist-go-backend</name>
+    <description>checklist-go-backend</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -66,7 +66,7 @@
         <dependency>
             <groupId>org.modelmapper</groupId>
             <artifactId>modelmapper</artifactId>
-            <version>2.4.5</version>
+            <version>3.1.0</version>
         </dependency>
     </dependencies>
 

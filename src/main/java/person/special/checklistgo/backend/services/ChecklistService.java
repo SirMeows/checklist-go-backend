@@ -1,14 +1,13 @@
-package person.special.checlistgobackend.services;
+package person.special.checklistgo.backend.services;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-import person.special.checlistgobackend.dto.ChecklistRequest;
-import person.special.checlistgobackend.dto.ChecklistResponse;
-import person.special.checlistgobackend.entities.Checklist;
-import person.special.checlistgobackend.entities.ListItem;
-import person.special.checlistgobackend.repositories.ChecklistRepository;
+import person.special.checklistgo.backend.dto.ChecklistRequest;
+import person.special.checklistgo.backend.dto.ChecklistResponse;
+import person.special.checklistgo.backend.entities.Checklist;
+import person.special.checklistgo.backend.repositories.ChecklistRepository;
 
 import java.util.List;
 

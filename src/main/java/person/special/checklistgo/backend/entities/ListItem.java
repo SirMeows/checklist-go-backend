@@ -1,4 +1,4 @@
-package person.special.checlistgobackend.entities;
+package person.special.checklistgo.backend.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

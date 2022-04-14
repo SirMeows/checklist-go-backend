@@ -1,11 +1,11 @@
-package person.special.checlistgobackend.entities;
+package person.special.checklistgo.backend.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import person.special.checlistgobackend.dto.ChecklistRequest;
+import person.special.checklistgo.backend.dto.ChecklistRequest;
 
 import javax.persistence.*;
 import java.util.HashSet;

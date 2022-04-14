@@ -1,4 +1,4 @@
-package person.special.checlistgobackend.dto;
+package person.special.checklistgo.backend.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package person.special.checlistgobackend;
+package person.special.checklistgo.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

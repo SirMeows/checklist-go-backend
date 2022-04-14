@@ -1,9 +1,9 @@
-package person.special.checlistgobackend.dto;
+package person.special.checklistgo.backend.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import person.special.checlistgobackend.entities.Checklist;
-import person.special.checlistgobackend.entities.ListItem;
+import person.special.checklistgo.backend.entities.Checklist;
+import person.special.checklistgo.backend.entities.ListItem;
 
 import java.util.List;
 import java.util.Set;

@@ -5,9 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import person.special.checklistgo.backend.dto.ChecklistRequest;
-
-
 import javax.persistence.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +26,4 @@ public class Checklist {
     @MapKey(name = "id")
     private Map<Long, ListItem> listItems = new HashMap<>();
 
-    public Checklist(ChecklistRequest body) {
-        this.name = body.getName();
-    }
 }

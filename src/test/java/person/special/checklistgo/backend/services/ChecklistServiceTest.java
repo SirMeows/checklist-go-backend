@@ -29,7 +29,8 @@ class ChecklistServiceTest {
     @BeforeEach
     void setUp() {
         cLService = new ChecklistService(clMockRepository);
-        cl = new Checklist(new ChecklistRequest("clName"));
+        cl = new Checklist();
+        cl.setName("testName");
     }
 
     @Test
@@ -65,7 +66,6 @@ class ChecklistServiceTest {
     }
 
     @Test
-
     void deleteChecklist_idDoesNotExist() {
         var id = 200L;
 

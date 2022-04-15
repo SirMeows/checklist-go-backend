@@ -13,6 +13,7 @@ import javax.persistence.*;
 @Setter
 @Entity
 public class ListItem {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

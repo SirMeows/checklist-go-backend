@@ -1,10 +1,10 @@
 package person.special.checklistgo.backend.services;
 
 import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-import person.special.checklistgo.backend.dto.ChecklistRequest;
 import person.special.checklistgo.backend.entities.Checklist;
 import person.special.checklistgo.backend.entities.ListItem;
 import person.special.checklistgo.backend.repositories.ChecklistRepository;
@@ -26,14 +26,13 @@ public class ChecklistService {
                 () -> new ResponseStatusException(HttpStatus.NOT_FOUND,"List with id '"+id+"' not found"));
     }
 
-    public Checklist addCheckList(ChecklistRequest body) {
-        return checklistRepository.save(new Checklist(body));
+    public Checklist addCheckList(Checklist checklist) {
+        return checklistRepository.save(checklist);
     }
 
-    public Checklist editChecklist(Long id, ChecklistRequest body) {
-        Checklist clToEdit = new Checklist(body);
-        clToEdit.setId(id);
-        return checklistRepository.save(clToEdit);
+    public Checklist editChecklist(Long id, Checklist checklist) {
+        checklist.setId(id);
+        return checklistRepository.save(checklist);
     }
 
     public void deleteChecklist(Long id) {

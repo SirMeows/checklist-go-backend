@@ -8,14 +8,14 @@ import org.springframework.web.server.ResponseStatusException;
 import person.special.checklistgo.backend.entities.Checklist;
 import person.special.checklistgo.backend.entities.ListItem;
 import person.special.checklistgo.backend.repositories.ChecklistRepository;
-
-import java.util.List;
 import java.util.Map;
 
 @AllArgsConstructor
 @Service
 public class ChecklistService {
     private ChecklistRepository checklistRepository;
+
+    private LineItemService lineItemService;
 
     public Map<Long, Checklist> getChecklists() {
         return checklistRepository.findAllMap();
@@ -41,7 +41,7 @@ public class ChecklistService {
         System.out.println("List with id '"+id+"' deleted");
     }
 
-    public List<ListItem> addItemToCheckList() {
+    public Checklist addItemToChecklist(ListItem item, Long listId) {
 
 
         return  null;

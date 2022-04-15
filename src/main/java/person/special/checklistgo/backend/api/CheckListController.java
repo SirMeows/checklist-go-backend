@@ -6,6 +6,7 @@ import org.modelmapper.TypeToken;
 import org.springframework.web.bind.annotation.*;
 import person.special.checklistgo.backend.dto.ChecklistRequest;
 import person.special.checklistgo.backend.dto.ChecklistResponse;
+import person.special.checklistgo.backend.dto.ListItemRequest;
 import person.special.checklistgo.backend.entities.Checklist;
 import person.special.checklistgo.backend.services.ChecklistService;
 
@@ -51,5 +52,11 @@ public class CheckListController {
         var response = modelMapper.map(clEdited, ChecklistResponse.class);
 
         return response;
+    }
+
+    @PostMapping("/{id}")
+    public ChecklistResponse addItemToChecklist(@RequestBody ListItemRequest body, @PathVariable Long id) {
+        // service calls another service, returns CheckList
+        return null;
     }
 }

@@ -35,7 +35,7 @@ class ChecklistServiceTest {
 
     @Test
     void getChecklists() {
-        // does it return map
+
         Mockito.when(clMockRepository.findAllMap()).thenReturn(Map.of(
                 1L, new Checklist(),
                 2L, new Checklist()
@@ -62,6 +62,7 @@ class ChecklistServiceTest {
 
         Mockito.when(clMockRepository.findById(id)).thenReturn(Optional.of(new Checklist(id, "someName", Collections.emptyMap())));
         cLService.deleteChecklist(id);
+
         Mockito.verify(clMockRepository).delete(any(Checklist.class));
     }
 

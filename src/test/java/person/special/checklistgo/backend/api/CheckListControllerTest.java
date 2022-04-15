@@ -1,5 +1,6 @@
 package person.special.checklistgo.backend.api;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -30,16 +31,20 @@ class CheckListControllerTest {
 
     CheckListController clController;
 
+    Checklist cl_1;
+    Checklist cl_2;
+
     @BeforeEach
     void setUp() {
-        this.clController = new CheckListController(modelMapper,clService);
+        this.clController = new CheckListController(modelMapper, clService);
+        cl_1 = ChecklistFactory.create(10L, "name_1");
+        cl_2 = ChecklistFactory.create(20L, "name_2");
     }
 
     @Test
     void getChecklists() {
         Map<Long, Checklist> checkLists = new HashMap<>();
-        var cl_1 = ChecklistFactory.create(10L, "name_1");
-        var cl_2 = ChecklistFactory.create(20L, "name_2");
+
         checkLists.put(cl_1.getId(), cl_1);
         checkLists.put(cl_2.getId(), cl_2);
 
@@ -51,5 +56,21 @@ class CheckListControllerTest {
         assertEquals(2, actual.size());
         assertTrue(actual.containsKey(cl_1.getId()));
         assertEquals("name_1", actual.get(cl_1.getId()).getName());
+    }
+
+    @Test
+    void getChecklist() {
+        Mockito.when(clService.getChecklist(cl_1.getId())).thenReturn(cl_1);
+
+        var actual = clController.getCheckList(cl_1.getId());
+
+        assertNotNull(actual);
+        assertEquals("name_1", cl_1.getName());
+    }
+
+    @AfterEach
+    void tearDown() {
+        cl_1 = null;
+        cl_2 = null;
     }
 }

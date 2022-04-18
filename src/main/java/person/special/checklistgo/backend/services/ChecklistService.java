@@ -1,12 +1,11 @@
 package person.special.checklistgo.backend.services;
 
 import lombok.AllArgsConstructor;
-import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import person.special.checklistgo.backend.entities.Checklist;
-import person.special.checklistgo.backend.entities.ListItem;
+import person.special.checklistgo.backend.entities.LineItem;
 import person.special.checklistgo.backend.repositories.ChecklistRepository;
 import java.util.Map;
 
@@ -15,7 +14,6 @@ import java.util.Map;
 public class ChecklistService {
     private ChecklistRepository checklistRepository;
 
-    private LineItemService lineItemService;
 
     public Map<Long, Checklist> getChecklists() {
         return checklistRepository.findAllMap();
@@ -41,9 +39,8 @@ public class ChecklistService {
         System.out.println("List with id '"+id+"' deleted");
     }
 
-    public Checklist addItemToChecklist(ListItem item, Long listId) {
-
-
+    public Checklist addItemToChecklist(LineItem item, Long listId) {
+        // add li to map in checklist
         return  null;
     }
 }

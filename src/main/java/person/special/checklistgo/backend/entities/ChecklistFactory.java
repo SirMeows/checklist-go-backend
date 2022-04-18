@@ -7,4 +7,10 @@ public class ChecklistFactory {
         cl.setId(id);
         return cl;
     }
+
+    public static Checklist create(String name) {
+        var cl = new Checklist();
+        cl.setName(name);
+        return cl;
+    }
 }

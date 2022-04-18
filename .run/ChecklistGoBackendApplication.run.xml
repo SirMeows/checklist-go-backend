@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="ChecklistGoBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" activateToolWindowBeforeRun="false" nameIsGenerated="true">
     <option name="ACTIVE_PROFILES" />
+    <envs>
+      <env name="JDBC_DATABASE_URL" value="jdbc:h2:mem:checklist-go" />
+    </envs>
     <module name="checklist-go-backend" />
-    <selectedOptions>
-      <option name="environmentVariables" />
-    </selectedOptions>
     <option name="SPRING_BOOT_MAIN_CLASS" value="person.special.checklistgo.backend.ChecklistGoBackendApplication" />
     <extension name="coverage">
       <pattern>

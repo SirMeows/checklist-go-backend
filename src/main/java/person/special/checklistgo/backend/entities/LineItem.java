@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-public class ListItem {
+public class LineItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

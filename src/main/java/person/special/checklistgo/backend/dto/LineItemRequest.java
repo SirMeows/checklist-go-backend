@@ -2,7 +2,7 @@ package person.special.checklistgo.backend.dto;
 
 import person.special.checklistgo.backend.entities.Checklist;
 
-public class ListItemRequest {
+public class LineItemRequest {
 
     private Long id;
 

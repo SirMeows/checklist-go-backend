@@ -14,6 +14,7 @@ import org.springframework.ui.ModelMap;
 import person.special.checklistgo.backend.entities.Checklist;
 import person.special.checklistgo.backend.entities.ChecklistFactory;
 import person.special.checklistgo.backend.services.ChecklistService;
+import person.special.checklistgo.backend.services.LineItemService;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,6 +30,9 @@ class CheckListControllerTest {
     @Mock
     ChecklistService clService;
 
+    @Mock
+    LineItemService lineItemService;
+
     CheckListController clController;
 
     Checklist cl_1;
@@ -36,7 +40,7 @@ class CheckListControllerTest {
 
     @BeforeEach
     void setUp() {
-        this.clController = new CheckListController(modelMapper, clService);
+        this.clController = new CheckListController(modelMapper, clService, lineItemService);
         cl_1 = ChecklistFactory.create(10L, "name_1");
         cl_2 = ChecklistFactory.create(20L, "name_2");
     }

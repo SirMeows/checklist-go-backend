@@ -17,5 +17,5 @@ public class ChecklistResponse {
 
     private String name;
 
-    private Map<Long, ListItemResponse> listItems;
+    private Map<Long, LineItemResponse> listItems;
 }

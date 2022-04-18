@@ -24,6 +24,5 @@ public class Checklist {
     @JsonIgnore
     @OneToMany(mappedBy = "checklist", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     @MapKey(name = "id")
-    private Map<Long, ListItem> listItems = new HashMap<>();
-
+    private Map<Long, LineItem> listItems = new HashMap<>();
 }

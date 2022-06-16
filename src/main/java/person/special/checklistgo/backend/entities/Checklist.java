@@ -21,8 +21,14 @@ public class Checklist {
 
     private String name;
 
+    // color
+
     @JsonIgnore
     @OneToMany(mappedBy = "checklist", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     @MapKey(name = "id")
     private Map<Long, LineItem> listItems = new HashMap<>();
+
+    public Checklist(String name) {
+        this.name = name;
+    }
 }

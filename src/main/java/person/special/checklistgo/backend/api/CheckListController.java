@@ -1,6 +1,4 @@
 package person.special.checklistgo.backend.api;
-
-import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.web.bind.annotation.*;
@@ -11,11 +9,12 @@ import person.special.checklistgo.backend.entities.Checklist;
 import person.special.checklistgo.backend.entities.LineItem;
 import person.special.checklistgo.backend.services.ChecklistService;
 import person.special.checklistgo.backend.services.LineItemService;
-
 import java.lang.reflect.Type;
+import lombok.*;
 import java.util.*;
 
 @AllArgsConstructor
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/checklist")
 public class CheckListController {
@@ -41,9 +40,9 @@ public class CheckListController {
         return modelMapper.map(checklistService.getChecklist(id), ChecklistResponse.class);
     }
 
-    @PutMapping
-    public ChecklistResponse addChecklist(@RequestBody ChecklistRequest body) {
-       var cl = checklistService.addCheckList(modelMapper.map(body, Checklist.class));
+    @PostMapping("/{name}")
+    public ChecklistResponse addChecklist(@PathVariable String name) {
+       var cl = checklistService.addCheckList(new Checklist(name));
        return modelMapper.map(cl, ChecklistResponse.class);
     }
 
@@ -63,7 +62,7 @@ public class CheckListController {
     }
 
 
-    @PostMapping("/{id}")
+    @PostMapping("/{id}/item")
     public ChecklistResponse addItemToChecklist(@RequestBody LineItemRequest body, @PathVariable Long id) {
         var li = modelMapper.map(body, LineItem.class);
         var cl = checklistService.getChecklist(id);

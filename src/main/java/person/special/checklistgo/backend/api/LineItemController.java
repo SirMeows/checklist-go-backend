@@ -4,10 +4,8 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.web.bind.annotation.*;
-import person.special.checklistgo.backend.dto.ChecklistResponse;
 import person.special.checklistgo.backend.dto.LineItemRequest;
 import person.special.checklistgo.backend.dto.LineItemResponse;
-import person.special.checklistgo.backend.entities.Checklist;
 import person.special.checklistgo.backend.entities.LineItem;
 import person.special.checklistgo.backend.services.LineItemService;
 
@@ -15,6 +13,7 @@ import java.lang.reflect.Type;
 import java.util.Map;
 
 @RestController
+@CrossOrigin(origins = "*")
 @AllArgsConstructor
 public class LineItemController {
 

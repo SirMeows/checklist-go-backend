@@ -45,18 +45,6 @@ class ChecklistServiceTest {
     }
 
     @Test
-    void getChecklist() {
-    }
-
-    @Test
-    void addCheckList() {
-    }
-
-    @Test
-    void editChecklist() {
-    }
-
-    @Test
     void deleteChecklist_idExists() {
         var id = 100L;
 
@@ -72,9 +60,5 @@ class ChecklistServiceTest {
 
         Exception exception = assertThrows(Exception.class, () -> cLService.deleteChecklist(id));
         assertEquals("404 NOT_FOUND \"List with id '200' not found\"", exception.getMessage());
-    }
-
-    @Test
-    void addItemToCheckList() {
     }
 }

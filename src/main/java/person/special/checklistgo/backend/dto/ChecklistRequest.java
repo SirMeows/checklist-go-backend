@@ -13,9 +13,5 @@ import java.util.Map;
 @AllArgsConstructor
 public class ChecklistRequest {
 
-    private Long id;
-
     private String name;
-
-    private Map<Long, LineItemResponse> listItems;
 }

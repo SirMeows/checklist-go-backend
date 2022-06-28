@@ -1,4 +1,6 @@
-package person.special.checklistgo.backend.entities;
+package person.special.checklistgo.backend.builders;
+
+import person.special.checklistgo.backend.entities.LineItem;
 
 public class LineItemFactory {
 

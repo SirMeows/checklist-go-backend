@@ -1,17 +1,20 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="ChecklistGoBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" activateToolWindowBeforeRun="false" nameIsGenerated="true">
-    <option name="ACTIVE_PROFILES" />
-    <envs>
-      <env name="JDBC_DATABASE_URL" value="jdbc:h2:mem:checklist-go" />
-    </envs>
     <module name="checklist-go-backend" />
-    <option name="SPRING_BOOT_MAIN_CLASS" value="person.special.checklistgo.backend.ChecklistGoBackendApplication" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="person.special.checklistgo.backend.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
+    <option name="SPRING_BOOT_MAIN_CLASS" value="person.special.checklistgo.backend.ChecklistGoBackendApplication" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+    <envs>
+      <env name="JDBC_DATABASE_URL" value="jdbc:mysql://localhost:3306/checklist-go-db" />
+      <env name="JDBC_USERNAME" value="root" />
+      <env name="JDBC_PASSWORD" value="miipmoop" />
+    </envs>
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

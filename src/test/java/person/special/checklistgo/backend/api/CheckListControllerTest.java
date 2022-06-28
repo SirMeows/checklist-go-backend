@@ -10,15 +10,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.ui.ModelMap;
+import person.special.checklistgo.backend.builders.ChecklistBuilder;
 import person.special.checklistgo.backend.entities.Checklist;
-import person.special.checklistgo.backend.entities.ChecklistFactory;
 import person.special.checklistgo.backend.services.ChecklistService;
 import person.special.checklistgo.backend.services.LineItemService;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -41,8 +38,16 @@ class CheckListControllerTest {
     @BeforeEach
     void setUp() {
         this.clController = new CheckListController(modelMapper, clService, lineItemService);
-        cl_1 = ChecklistFactory.create(10L, "name_1");
-        cl_2 = ChecklistFactory.create(20L, "name_2");
+        cl_1 = ChecklistBuilder
+                .create()
+                .addId(10L)
+                .addName("name_1")
+                .build();
+        cl_2 = ChecklistBuilder
+                .create()
+                .addId(20L)
+                .addName("name_2")
+                .build();
     }
 
     @Test

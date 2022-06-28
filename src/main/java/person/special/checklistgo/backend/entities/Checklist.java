@@ -21,6 +21,12 @@ public class Checklist {
 
     private String name;
 
+    // private boolean isActive;
+
+    // created
+
+    // modified
+
     // color
 
     @JsonIgnore

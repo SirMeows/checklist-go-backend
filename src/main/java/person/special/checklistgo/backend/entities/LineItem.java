@@ -20,7 +20,7 @@ public class LineItem {
 
     private String description;
 
-    private boolean isChecked;
+    private boolean isActive;
 
     @ManyToOne
     private Checklist checklist;
